@@ -13,5 +13,14 @@ router.post("/patient_entry",async(req,res)=>{
     )
 })
 
+    router.get("/patient_view",async(req,res)=>{
+        let data=await patientModel.find()
+        res.json(data)
+    })
+
+
+
+
+
 
 module.exports=router
