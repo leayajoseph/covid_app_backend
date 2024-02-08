@@ -13,10 +13,16 @@ router.post("/patient_entry",async(req,res)=>{
     )
 })
 
-    router.get("/patient_view",async(req,res)=>{
-        let data=await patientModel.find()
-        res.json(data)
-    })
+router.get("/patient_view",async(req,res)=>{
+    let data=await patientModel.find()
+    res.json(data)
+})
+
+router.post("/patient_search",async(req,res)=>{
+    let input=req.body
+    let data=await patientModel.find(input)
+    res.json(data)
+})
 
 
 
